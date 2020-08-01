@@ -1,1 +1,2 @@
 # contra-text-entailments
+Currently, RoBERTa base and RoBERTA large fine tuned on MNLI dataset score 87.6 and 90.2 respectively. One of the NLI tasks is identify if Sentence 2 is contradiction to Sentence 1. Our research contention is if a sentence pair is considered as contradiction, it should be a contradiction even when the sentences is switched. That is what this is trying to measure and validate.
