@@ -81,9 +81,10 @@ with open('/opt/models/data-bin/switched-dev-matched-mnli/switched-dev-matched.t
                 entail_entail +=1
                         
 print('| Accuracy: ', float(ncorrect)/float(nsamples))
-#print('| Neutral performance:', float(nneutral)/float(tneutral))
-#print('| Contradiction performance:', float(ncontradiction)/float(tcontradiction))
-#print('| Entailment performance:', float(nentailment)/float(tentailment))
+
+print('| Entailment performance:', float(entail_entail)/float(total_entailment))
+print('| Contradiction performance:', float(contra_contra)/float(total_contradiction))
+print('| Neutral performance:', float(neutral_neutral)/float(total_neutral))
 
 print('| Entailment:Total Entailment:{}, Entail Entailments: {} {}, Entail Neutral: {}, Entail Contras: {} '.format(total_entailment, float(entail_entail)/float(total_entailment), entail_entail, entail_neutral, entail_contra))
 print('| Contradiction:Total Contradiction:{}, Contradiction Entailments: {}, Contradiction Neutral: {}, Contradiction Contras: {} '.format(total_contradiction, contra_entail, contra_neutral, contra_contra))
