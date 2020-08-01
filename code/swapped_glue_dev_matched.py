@@ -6,10 +6,6 @@ import torch
 # This code sample uses roberta.large.mnli but for custom models, please update the following line
 
 roberta = torch.hub.load('pytorch/fairseq', 'roberta.large.mnli')
-
-# For custom codes, use
-# roberta = RobertaModel.from_pretrained('/opt/models/fairseq/checkpoints', checkpoint_file='87-4.pt', data_name_or_path='/opt/models/fairseq/MNLI-bin')
-
 roberta.eval()  # disable dropout for evaluation
 
 label_map = {0: 'contradiction', 1: 'neutral', 2: 'entailment'}
@@ -90,7 +86,7 @@ print('| Entailment performance:', float(entail_entail)/float(total_entailment))
 print('| Contradiction performance:', float(contra_contra)/float(total_contradiction))
 print('| Neutral performance:', float(neutral_neutral)/float(total_neutral))
 
-print('| Entailment:Total Entailment:{}, Entail Entailments: {} {}, Entail Neutral: {}, Entail Contras: {} '.format(total_entailment, float(entail_entail)/float(total_entailment), entail_entail, entail_neutral, entail_contra))
-print('| Contradiction:Total Contradiction:{}, Contradiction Entailments: {}, Contradiction Neutral: {}, Contradiction Contras: {} '.format(total_contradiction, contra_entail, contra_neutral, contra_contra))
-print('| Neutral:Total Neutral:{}, Neutral Entailments: {}, Neutral Neutral: {}, Neutral Contras: {} '.format(total_neutral, neutral_entail, neutral_neutral, neutral_contra))
+print('| Entailment:Total Entailment:{}, Entail Entailments: {}%, {}, Entail Neutral: {}, Entail Contras: {} '.format(total_entailment, (float(entail_entail)*100)/float(total_entailment), entail_entail, entail_neutral, entail_contra))
+print('| Contradiction:Total Contradiction:{}, Contradiction Entailments: {}, Contradiction Neutral: {}, Contradiction Contras: %{}, {} '.format(total_contradiction, contra_entail, contra_neutral, (float(contra_contra)*100)/float(total_contradiction), contra_contra))
+print('| Neutral:Total Neutral:{}, Neutral Entailments: {}, Neutral Neutral: {}, Neutral Contras: {} '.format(total_neutral, neutral_entail, (float(neutral_neutral)*100)/float(total_neutral),neutral_neutral, neutral_contra))
 
