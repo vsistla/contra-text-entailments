@@ -6,6 +6,10 @@ import torch
 # This code sample uses roberta.large.mnli but for custom models, please update the following line
 
 roberta = torch.hub.load('pytorch/fairseq', 'roberta.large.mnli')
+
+# For custom codes, use
+# roberta = RobertaModel.from_pretrained('/opt/models/fairseq/checkpoints', checkpoint_file='87-4.pt', data_name_or_path='/opt/models/fairseq/MNLI-bin')
+
 roberta.eval()  # disable dropout for evaluation
 
 label_map = {0: 'contradiction', 1: 'neutral', 2: 'entailment'}
