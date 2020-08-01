@@ -1,4 +1,4 @@
-# Original code is from https://github.com/pytorch/fairseq/blob/master/examples/roberta/README.pretraining.md
+# Original code is from https://github.com/pytorch/fairseq/blob/master/examples/roberta/README.glue.md
 
 TOTAL_NUM_UPDATES=2036  # original 2036 - 10 epochs through RTE for bsz 16
 WARMUP_UPDATES=122      # 122 6 percent of the number of updates
