@@ -8,3 +8,5 @@ fine-tune-glue-mnli.sh - is based on the code listed on this page - https://gith
 
 swapped_glue_dev_matched.py - is based on the code listed on this page - https://github.com/pytorch/fairseq/blob/master/examples/roberta/README.glue.md
 
+Rest of the preprocessing scripts are built off of the code listed on this page - https://github.com/pytorch/fairseq/blob/master/examples/roberta/README.pretraining.md
+
